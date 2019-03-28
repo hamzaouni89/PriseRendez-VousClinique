@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from codecares.com/html/seba/blog-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Dec 2018 09:45:22 GMT -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Seba | Health & Medical HTML5 Template</title>
+
+    <!-- Favicon -->
+    <link href="images/favicon.png" rel="shortcut icon" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body onload="getCIN(),getSpcialites() ,loadpatient()">
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <header class="main-herader">
+        <!-- Header topbar start -->
+
+
+        <!-- Header Middle -->
+
+        <!-- Header navbar start -->
+        <div class="header-navbar fixed-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-sm-12 col-xs-12">
+                        <nav class="navbar navbar-default">
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown"
+                                data-animations="zoomIn">
+                                <ul class="nav navbar-nav navbar-center">
+                                    <li>
+                                        <a href="index-one.html" aria-haspopup="true" aria-expanded="false">Acceuil</a>
+
+
+                                    </li>
+
+
+                                    <li>
+                                        <a href="doctors-col-3.html" aria-haspopup="true" aria-expanded="false">Médecins
+                                        </a>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="user_profil.html" class="hidden" id="profil" aria-haspopup="true"
+                                            aria-expanded="false">Profil<i aria-hidden="true"></i>
+                                        </a>
+
+                                    </li>
+                                    <li id="deconx" class="hidden">
+                                        <button class="login" onclick="decont()"> Déconnexion
+                                        </button>
+
+
+                                    </li>
+
+
+                                    <li>
+                                        <a href="account.html" id="coonx" class="" aria-haspopup="true" aria-expanded="false">Connexion</a>
+
+                                    </li>
+                                    <li><a href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Inner page heading start from here -->
+    <section id="inner-title-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="inner-title-bar-box text-center">
+                        <h2>Votre profil</h2>
+                        <p><a href="index-one.html">profil</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            <a href="#">Patient</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Start -->
+    <section class="blog-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2" class="menu">
+                    <div class="sidebar">
+
+                        <div class="categories clearfix">
+
+                            <h3 class="sedebar-title">Menu</h3>
+                            <ul>
+                                <li><a onclick="information()">Information génerale</a>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">Getion de Rendez-vous</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a onclick="ajouttRenz()">Ajoutez de rendez-vous</a>
+                                        <li><a onclick="VoirRenz()">Listes de rendez-vous</a>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10" class="menu">
+                    <div class="style">
+
+                        <div class="row">
+                            <div id="info" class="">
+
+                            </div>
+                        </div>
+
+                        <div class="hidden" id="modif_patientC">
+                            <form>
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Numero CIN<span class="required"> *
+                                            </span></label>
+                                        <input class="form-control" id="cin_patientA" type="number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Nom<span class="required"> * </span></label>
+                                        <input class="form-control" id="nom_patientA" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Prenom <span class="required"> *
+                                            </span></label>
+                                        <input class="form-control" id="prenom_patientA" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email <span class="required"> *
+                                            </span></label>
+                                        <input class="form-control" id="email_patientA" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Password <span class="required"> *
+                                            </span></label>
+                                        <input class="form-control" id="password1_patientA" type="password">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Sexe <span class="required"> *
+                                            </span></label>
+                                        <select class="form-control" id="sexe_patientA" name="sexe">
+                                            <option value="">Select...</option>
+                                            <option>Homme</option>
+                                            <option>Femme</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Telephone <span class="required"> *
+                                            </span></label>
+                                        <input class="form-control" id="mobile_patientA" type="number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Date de naissance <span class="required">
+                                                * </span></label>
+                                        <input class="form-control" id="datenaissance_patientA" type="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Etat Civil <span class="required">
+                                                *
+                                            </span></label>
+                                        <select class="form-control" id="etat_patientA" name="sexe">
+                                            <option value="">Select...</option>
+                                            <option>Célibataire</option>
+                                            <option>Marier</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Tension <span class="required"> *
+                                            </span></label>
+                                        <select class="form-control" id="tension_patientA" name="sexe">
+                                            <option value="">Select...</option>
+                                            <option value="Oui">Oui</option>
+                                            <option value="Non">Non</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Diabète <span class="required"> *
+                                            </span></label>
+                                        <select class="form-control" id="diabete_patientA" name="sexe">
+                                            <option value="">Select...</option>
+                                            <option value="Oui">Oui</option>
+                                            <option value="Non">Non</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Group Sanguin <span class="required">
+                                                *
+                                            </span></label>
+                                        <select class="form-control" id="group_sanguinA" name="sexe">
+                                            <option value="">Select...</option>
+                                            <option value="A">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Adresse <span class="required"> *
+                                            </span></label>
+                                        <textarea class="form-control" id="adressA" name="address" placeholder="address"
+                                            class="form-control-textarea" rows="2"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Photo de Profile <span class="required">
+                                                * </span></label>
+                                        <div class="compose-editor">
+                                            <input class="form-control" type="file" id="photo_patientA" class="default"
+                                                accept=".gif,.jpg,.jpeg,.png" multiple>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="offset-md-3 col-md-9">
+                                                <center> <button type="button" onclick="modifier_patient()" class="btn btn-info m-r-20">Modifier</button></center>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+                        <div class="hidden" id="AjouttRen">
+                            <section class="appointment-area">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="appointment-col">
+                                                <h2>Rendez-vous</h2>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="appointment-col">
+
+                                                                <select class="form-control" onchange="getPatientByCIN(this.value)"
+                                                                    id="cin">
+                                                                    <option></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div id="rdv"></div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="appointment-col">
+                                                                <select class="form-control" onchange="getMedecinBySpecialite(this.value)"
+                                                                    id="spec">
+                                                                    <option></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="appointment-col">
+                                                                <select class="form-control" id="MedByspec">
+                                                                    <option></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="appointment-col">
+                                                                <div class="input-group date">
+                                                                    <input type="text" id="datepicker" class="form-control">
+                                                                    <div class="input-group-addon">
+                                                                        <span class="glyphicon glyphicon-th"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="appointment-col">
+                                                                <select class="form-control" id="heure">
+                                                                    <option>10h-10:45h</option>
+                                                                    <option>10:45h-11:30</option>
+                                                                    <option>11:30 - 12:15</option>
+                                                                    <option>12:15 - 13h</option>
+                                                                    <option>15h - 15:45h</option>
+                                                                    <option>15:45h -16h</option>
+                                                                    <option>16h - 16:45h</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <div class="appointment-col center1199">
+                                                                <textarea class="form-control" rows="5" placeholder="Message"
+                                                                    id="msg"></textarea>
+                                                                <button class="btn btn-default simple-btn" type="button"
+                                                                    onclick="Sauvegard()">Enregistrer</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="appointment-col appointment-img wow fadeInRight"
+                                                data-wow-duration="1s" data-wow-delay="0s">
+                                                <img src="images/doctor.png" class="imgs" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div id="VoirReenz" class="hidden">
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- footer start -->
+    <footer class="main-footer overlay-black">
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-6 ">
+                    <div class="footer-about-col col-default">
+                        <h4>About Seba</h4>
+                        <div class="heading-under-line"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt soluta beatae ipsa.</p>
+                        <ul class="about-info">
+                            <li><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <p>St. la bourse, building El Wafa, Bloc A 2nd floor, Lac 2, Tunis, Tunisia</p>
+                            </li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i>
+                                <p>+216 71 190 418</p>
+                            </li>
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                                <p>contact@FivePoints.tn</p>
+                            </li>
+                        </ul>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class=" col-md-6 ">
+                    <div class="item">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12771.027243778613!2d10.2718065!3d36.8482999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x40d4c4e08bb03511!2sFive+Points+The+Talent+pool!5e0!3m2!1sfr!2stn!4v1542983377637"
+                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <!-- Copyright start from here -->
+    <div class="copyright">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright-col text-center">
+                    <p>Copyright ©2018 All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- All Included JavaScript -->
+    <script src="js/CodePatient.js"></script>
+    <script src="js/code.js"></script>
+    <script src="js/bootstrap-dropdownhover.min.js"></script>
+    <script src="js/jquery-scrolltofixed-min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.countup.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/dyscrollup.js"></script>
+    <script src="js/VideoPlayerPopUp.js"></script>
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="js/animated-text.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+
+<!-- Mirrored from codecares.com/html/seba/blog-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Dec 2018 09:45:22 GMT -->
+
+</html>
